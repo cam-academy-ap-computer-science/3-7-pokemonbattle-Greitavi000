@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 /* Main() battleStart(); then damage();  statsTable();. 
  * battleStart();I must have information that another Pokemon is coming, the question is in the name of our 
@@ -16,12 +16,13 @@ public class PokemonBattle {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		Scanner userInput = new Scanner(System.in);
 		battleStart();
 		damage();
 
 	}
-	public static String battleStart() {
-		Scanner userInput = new Scanner(System.in);
+
+	public static void battleStart(String userInput) {
 		System.out.println("Another trainer is issuing a challenge!");
 		System.out.println();
 		System.out.println("Zebstrika appeared.");
@@ -34,24 +35,29 @@ public class PokemonBattle {
 		System.out.println("It’s a Pokemon battle between " + username + " and Zebstrika!  Go!");
 		return username;
 	}
-	
+
 	public static double damage() {
-		double level = ;
+		double level = ; /* */
 		double stepOne = 2* level + 10;
 		double stepTwo = stepOne/250;
-		double attack=;
+		double attack = ;    /* */
+		double diffense= ;    /* */
 		double stepThree = stepTwo + (attack/diffense);
-		double stepFour =stepThree * base + 2 ; 
-		double random = 0.85 + (math.random() * 0.15) ;
-		double STAB = ;
+		double base = ;      /* */
+		double stepFour = stepThree * base + 2 ; 
+		double random = 0.85 + (Math.random() * 0.15) ;
+		double STAB = ;    /* */
 		double modifier = random * STAB;
-		
-		
-	System.out.println("Zebstrika used" + username + "Thunderbolt!");
-	System.out.println("Trainer, what are your  stats?");
-	
-	return demage;
-	
-	
+		int demage = (int) (stepFour * modifier);	
+	System.out.println("Zebstrika used Thunderbolt!");
+	System.out.println();
+	System.out.println("Trainer, what are your " + username + " stats?");
+	System.out.println("Level:" + level);
+	System.out.println("Attack:"+ attack);
+	System.out.println("Defense:" + diffense );
+	System.out.println("");
+	System.out.println("");
+	return demage;	
 	}
+
 }
