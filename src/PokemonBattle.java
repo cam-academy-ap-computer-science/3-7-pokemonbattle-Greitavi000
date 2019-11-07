@@ -17,47 +17,89 @@ public class PokemonBattle {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner userInput = new Scanner(System.in);
+	  	String name = userInput.nextLine();
 		battleStart();
 		damage();
-
+		statsTable();
 	}
 
-	public static void battleStart(String userInput) {
+	public static void battleStart() {
 		System.out.println("Another trainer is issuing a challenge!");
 		System.out.println();
 		System.out.println("Zebstrika appeared.");
 		System.out.println();
-		System.out.println("Which Pokemon do you choose?");
+		System.out.println("Which Pokemon do you choose?" + name);
 		System.out.println();
-		String username = userInput.next();
-		System.out.println("You chose " + username + " !");
+		System.out.println("You chose "+name+" !"); /**/
 		System.out.println();
-		System.out.println("It’s a Pokemon battle between " + username + " and Zebstrika!  Go!");
-		return username;
+		System.out.println("It's a Pokemon battle "+name+" between and Zebstrika!  Go!"); /**/
+		System.out.println();
+		System.out.println();
+		
 	}
 
-	public static double damage() {
-		double level = ; /* */
-		double stepOne = 2* level + 10;
+	   public static double damage() {
+		System.out.println("Zebstrika used Thunderbolt!");
+		System.out.println();
+		System.out.println("Trainer, what are your "+ name +"'s stats?"); /**/
+		System.out.println();
+		int level = 40; /* */
+		System.out.println("Level:  " + level);
+		System.out.println();
+		int attack = 52 ;    /* */
+		System.out.println("Attack:  "+ attack);
+		System.out.println();
+		int diffense= 51;    /* */
+		System.out.println("Defense:  " + diffense );
+		System.out.println();
+		int base = 1 ;      /* */
+		System.out.println("Base:  " + base);
+		System.out.println();
+		int STAB =1 ;    /* */
+		System.out.println("STAB:  "+STAB);
+		System.out.println();
+		int HP = 96;  /* */
+		System.out.println("HP:  " + HP );
+		System.out.println();
+		double stepOne = 2 * level + 10;
 		double stepTwo = stepOne/250;
-		double attack = ;    /* */
-		double diffense= ;    /* */
 		double stepThree = stepTwo + (attack/diffense);
-		double base = ;      /* */
 		double stepFour = stepThree * base + 2 ; 
 		double random = 0.85 + (Math.random() * 0.15) ;
-		double STAB = ;    /* */
 		double modifier = random * STAB;
-		int demage = (int) (stepFour * modifier);	
-	System.out.println("Zebstrika used Thunderbolt!");
-	System.out.println();
-	System.out.println("Trainer, what are your " + username + " stats?");
-	System.out.println("Level:" + level);
-	System.out.println("Attack:"+ attack);
-	System.out.println("Defense:" + diffense );
-	System.out.println("");
-	System.out.println("");
-	return demage;	
+		int demage = (int) (stepFour * modifier);
+		System.out.println(name + "sustained "+ demage +" points damage.");  /**/
+		System.out.println();
+		System.out.println("HP, after damage, are now "+ HP +".");
+		System.out.println();
+		System.out.println();
+		return demage;	
 	}
+	   
+      public static void statsTable() {
+    	  System.out.println("Name     "+  name);   /**/
+    	  System.out.println();
+    	  System.out.println("Level    40");
+    	  System.out.println();
+    	  System.out.println("------------------------------");
+    	  System.out.println();
+    	  System.out.println("HP    	96");
+    	  System.out.println();
+    	  System.out.println("ATTACK	52");
+    	  System.out.println();
+    	  System.out.println("DEFENSE   51");
+    	  System.out.println();
+    	  System.out.println("SP. ATK   121");
+    	  System.out.println();
+    	  System.out.println("SP. DEF   81");
+    	  System.out.println();
+    	  System.out.println("SPEED 	107");
+    	  System.out.println();
+    	  System.out.println("-------------------------------");
+    	  System.out.println();
+    	  System.out.println("");
+    	  
+      }
+	   
 
 }
