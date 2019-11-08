@@ -24,7 +24,7 @@ public class PokemonBattle {
 	
 	
 	public static String battleStart() {
-	  	System.out.println("Another trainer is issuing a challenge!");
+	  	System.out.println("Ano  ther trainer is issuing a challenge!");
 		System.out.println();
 		System.out.println("Zebstrika appeared.");
 		System.out.println();
