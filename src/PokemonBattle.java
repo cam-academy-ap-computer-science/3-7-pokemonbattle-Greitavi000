@@ -16,35 +16,40 @@ public class PokemonBattle {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner userInput = new Scanner(System.in);
-	  	String name = userInput.nextLine();
-		battleStart();
-		damage();
-		statsTable();
+	    String name; 
+		name = battleStart();
+		damage(name);
+		statsTable(name);
 	}
-
-	public static void battleStart() {
-		System.out.println("Another trainer is issuing a challenge!");
+	
+	
+	public static String battleStart() {
+	  	System.out.println("Another trainer is issuing a challenge!");
 		System.out.println();
 		System.out.println("Zebstrika appeared.");
 		System.out.println();
-		System.out.println("Which Pokemon do you choose?" + name);
+		System.out.print("Which Pokemon do you choose?");
+		Scanner userInput = new Scanner(System.in);
+	  	String name = userInput.nextLine();
+	  	System.out.println();
+	  	System.out.println("You chose "+ name +" !"); /**/
 		System.out.println();
-		System.out.println("You chose "+name+" !"); /**/
-		System.out.println();
-		System.out.println("It's a Pokemon battle "+name+" between and Zebstrika!  Go!"); /**/
+		System.out.println("It's a Pokemon battle "+ name +" between and Zebstrika!  Go!"); /**/
 		System.out.println();
 		System.out.println();
+		return name;
 		
 	}
 
-	   public static double damage() {
+	   public static void damage(String name) {
+		Scanner userInput = new Scanner(System.in);
 		System.out.println("Zebstrika used Thunderbolt!");
 		System.out.println();
 		System.out.println("Trainer, what are your "+ name +"'s stats?"); /**/
 		System.out.println();
-		int level = 40; /* */
-		System.out.println("Level:  " + level);
+		System.out.print("Level:  ");
+	  	int level = userInput.nextInt(); 
+		System.out.println(level);
 		System.out.println();
 		int attack = 52 ;    /* */
 		System.out.println("Attack:  "+ attack);
@@ -55,7 +60,7 @@ public class PokemonBattle {
 		int base = 1 ;      /* */
 		System.out.println("Base:  " + base);
 		System.out.println();
-		int STAB =1 ;    /* */
+		int STAB = 1 ;    /* */
 		System.out.println("STAB:  "+STAB);
 		System.out.println();
 		int HP = 96;  /* */
@@ -73,10 +78,11 @@ public class PokemonBattle {
 		System.out.println("HP, after damage, are now "+ HP +".");
 		System.out.println();
 		System.out.println();
-		return demage;	
+	
 	}
 	   
-      public static void statsTable() {
+      public static void statsTable(String name) {
+   
     	  System.out.println("Name     "+  name);   /**/
     	  System.out.println();
     	  System.out.println("Level    40");
