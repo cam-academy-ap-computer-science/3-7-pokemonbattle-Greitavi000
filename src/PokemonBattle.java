@@ -7,7 +7,7 @@ import java.util.*;
  *         attack, defense, base \ base, STAB, HP, the decision how many of our Pokemon lost points, and how 
  *         much HP he has left.
  *statsTable(); It should have the name of the Pokemon, its level, then the dashed line,
- *         followed by HP, attack, defense, Sp. attacks, Sp.protection, speed, then the dashed line again, and
+ *         followed by HP, attack, defense, Sp. attacks, Sp. protection, speed, then the dashed line again, and
  *         the learned movements behind it.
  *  
  *  */
@@ -18,8 +18,9 @@ public class PokemonBattle {
 		// TODO Auto-generated method stub
 	    String name; 
 		name = battleStart();
-		damage(name);
-		statsTable(name);
+		int HP;
+		HP = damage(name);
+		statsTable(name, HP);
 	}
 	
 	
@@ -30,9 +31,9 @@ public class PokemonBattle {
 		System.out.println();
 		System.out.print("Which Pokemon do you choose?");
 		Scanner userInput = new Scanner(System.in);
-	  	String name = userInput.nextLine();
+	  	String name = userInput.nextLine();              /*typing input*/
 	  	System.out.println();
-	  	System.out.println("You chose "+ name +" !"); /**/
+	  	System.out.println("You chose "+ name +" !");
 		System.out.println();
 		System.out.println("It's a Pokemon battle "+ name +" between and Zebstrika!  Go!"); /**/
 		System.out.println();
@@ -41,30 +42,27 @@ public class PokemonBattle {
 		
 	}
 
-	   public static void damage(String name) {
-		Scanner userInput = new Scanner(System.in);
+	   public static int damage(String name) {
+		Scanner userInput = new Scanner(System.in);		
 		System.out.println("Zebstrika used Thunderbolt!");
 		System.out.println();
 		System.out.println("Trainer, what are your "+ name +"'s stats?"); /**/
 		System.out.println();
 		System.out.print("Level:  ");
-	  	int level = userInput.nextInt(); 
+	  	int level = 40;                      /* use number from instructions */
 		System.out.println(level);
 		System.out.println();
-		int attack = 52 ;    /* */
+		int attack = 52 ;                    /* use number from instructions */
 		System.out.println("Attack:  "+ attack);
 		System.out.println();
-		int diffense= 51;    /* */
+		int diffense = 51;                    /* use number from instructions */
 		System.out.println("Defense:  " + diffense );
 		System.out.println();
-		int base = 1 ;      /* */
-		System.out.println("Base:  " + base);
+		System.out.print("Base:  "); 
+	    int base = userInput.nextInt();         /*typing input*/
 		System.out.println();
-		int STAB = 1 ;    /* */
-		System.out.println("STAB:  "+STAB);
-		System.out.println();
-		int HP = 96;  /* */
-		System.out.println("HP:  " + HP );
+		System.out.print("STAB:  ");
+		int STAB = userInput.nextInt() ;       /*typing input*/
 		System.out.println();
 		double stepOne = 2 * level + 10;
 		double stepTwo = stepOne/250;
@@ -73,33 +71,36 @@ public class PokemonBattle {
 		double random = 0.85 + (Math.random() * 0.15) ;
 		double modifier = random * STAB;
 		int demage = (int) (stepFour * modifier);
-		System.out.println(name + "sustained "+ demage +" points damage.");  /**/
+		int HP = base- demage;                     /* HP value */
+		System.out.println("HP:  " + HP );
 		System.out.println();
-		System.out.println("HP, after damage, are now "+ HP +".");
+		System.out.println(name + " sustained "+ demage +" points damage.");  
+		System.out.println();
+		System.out.println("HP, after damage, are now "+ HP +".");       
 		System.out.println();
 		System.out.println();
-	
-	}
+		return HP;
+	   }
 	   
-      public static void statsTable(String name) {
+      public static void statsTable(String name, int HP) {
    
-    	  System.out.println("Name     "+  name);   /**/
+    	  System.out.println("Name     "+  name);   /*typing input*/
     	  System.out.println();
-    	  System.out.println("Level    40");
+    	  System.out.println("Level    40");           /* use number from instructions */
     	  System.out.println();
     	  System.out.println("------------------------------");
     	  System.out.println();
-    	  System.out.println("HP    	96");
+    	  System.out.println("HP    	" + HP);           /*typing input*/
     	  System.out.println();
-    	  System.out.println("ATTACK	52");
+    	  System.out.println("ATTACK	52");           /* use number from instructions */
     	  System.out.println();
-    	  System.out.println("DEFENSE   51");
+    	  System.out.println("DEFENSE   51");          /* use number from instructions */
     	  System.out.println();
-    	  System.out.println("SP. ATK   121");
+    	  System.out.println("SP. ATK   121");         /* use number from instructions */
     	  System.out.println();
-    	  System.out.println("SP. DEF   81");
+    	  System.out.println("SP. DEF   81");           /* use number from instructions */
     	  System.out.println();
-    	  System.out.println("SPEED 	107");
+    	  System.out.println("SPEED 	107");           /* use number from instructions */
     	  System.out.println();
     	  System.out.println("-------------------------------");
     	  System.out.println();
@@ -107,5 +108,6 @@ public class PokemonBattle {
     	  
       }
 	   
-
 }
+
+
