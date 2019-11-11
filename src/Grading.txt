@@ -1,0 +1,17 @@
+Total Grade: 25/25
+
+Correct Output: 10/10
+User Interface: 5/5
+Return Values:  3/3
+Parameters:     3/3
+Pseudocode:     2/2
+Style Guide:    2/2
+
+Great work!
+
+No points off this time but, according to the style guidelines, variable names need to start with lowercase letters.
+You used "HP" as a variable name.  It might take some getting used to, but even acronyms can be lowercase in variable names, and
+it will make more sense to other programmers reading your code if you write an acronym like HP as "hp" in a variable name or method
+name.
+
+Your indents also got a little bit off with your damage() method, but not enough to warrant a point deduction this time.
